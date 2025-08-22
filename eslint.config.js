@@ -18,6 +18,16 @@ export default tseslint.config([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true }, 
+      sourceType: 'module' },
+    },
+    settings: {
+      react: { version: 'detect' },
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',         //ts handles prop types
     },
   },
 ])
